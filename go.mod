@@ -1,6 +1,6 @@
 module github.com/kuma/auto-dns-refresher
 
-go 1.22.6
+go 1.22
 
 require google.golang.org/api v0.194.0
 
