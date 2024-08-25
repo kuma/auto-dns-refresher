@@ -1,0 +1,15 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DOMAINS=${DOMAINS}
+      - PROJECT_ID=${PROJECT_ID}
+      - MANAGED_ZONE=${MANAGED_ZONE}
+      - WEBHOOK_URL=${WEBHOOK_URL}
+      - WAIT_IN_MINUTES=${WAIT_IN_MINUTES}
+    volumes:
+      - ./key.json:/root/key.json:ro
+    command: ["./main"]
+    restart: always
